@@ -5,9 +5,11 @@ void main(List<String> args) {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       //instanciado o HomeWidget. Assim tendo a criação e componentização de widgets de forma separada.
       home: HomePageWidget(),
     ); //estamos passando a instancia de outra classe diretamente para o retorno dela.
@@ -15,9 +17,12 @@ class MyApp extends StatelessWidget {
 }
 
 class HomePageWidget extends StatelessWidget {
+  const HomePageWidget(
+      {super.key}); // key é basicamente um identificador na arvore do widget. É opcional.
+
   @override
   Widget build(BuildContext context) {
-    return Material(
+    return const Material(
       child: Center(
         child: Text('Bruno Mota'),
       ),
