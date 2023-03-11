@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       //instanciado o HomeWidget. Assim tendo a criação e componentização de widgets de forma separada.
-      home: HomeController(child: HomePageWidget()),
+      home: HomeController(child: HomePage()),
     ); //estamos passando a instancia de outra classe diretamente para o retorno dela.
   }
 }
