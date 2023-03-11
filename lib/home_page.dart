@@ -17,21 +17,53 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // barra no topo da tela
-        title: const Text('Home'),
+        title: const Text('Curso Flutter'),
       ),
-      body: Center(
-        child: Text("Bruno Mota $counter"),
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        // quando clicar nesse botão, vai chamar a função anonima abaixo. Uma função anonima pode ser passada como propriedade.
-        onPressed: () {
-          setState(() {
-            counter++;
-          });
-        },
-      ),
+      body: SizedBox(
+          width: double.infinity,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                width: 80,
+                height: 80,
+                color: Colors.red,
+              ),
+              Container(
+                width: 80,
+                height: 80,
+                color: Colors.amber,
+              ),
+              Container(
+                width: 80,
+                height: 80,
+                color: Colors.blueAccent,
+              )
+            ],
+          )),
     );
   }
+
+  // @override
+  // Widget build(BuildContext context) {
+  //   return Scaffold(
+  //     appBar: AppBar(
+  //       // barra no topo da tela
+  //       title: const Text('Home'),
+  //     ),
+  //     body: Center(
+  //       child: Text("Bruno Mota $counter"),
+  //     ),
+  //     floatingActionButton: FloatingActionButton(
+  //       child: Icon(Icons.add),
+  //       // quando clicar nesse botão, vai chamar a função anonima abaixo. Uma função anonima pode ser passada como propriedade.
+  //       onPressed: () {
+  //         setState(() {
+  //           counter++;
+  //         });
+  //       },
+  //     ),
+  //   );
+  // }
 }
