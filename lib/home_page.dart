@@ -21,14 +21,15 @@ class _HomePageState extends State<HomePage> {
       ),
       body: SizedBox(
           width: double.infinity,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.start,
+          height: double.infinity,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Container(
                 width: 80,
                 height: 80,
-                color: Colors.red,
+                color: Colors.pink,
               ),
               Container(
                 width: 80,
