@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello_world/home_controller.dart';
 
 import 'home_page.dart';
 
@@ -7,9 +8,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       //instanciado o HomeWidget. Assim tendo a criação e componentização de widgets de forma separada.
-      home: HomePageWidget(),
+      home: HomeController(child: HomePageWidget()),
     ); //estamos passando a instancia de outra classe diretamente para o retorno dela.
   }
 }
