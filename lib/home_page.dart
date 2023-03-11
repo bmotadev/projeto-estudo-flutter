@@ -9,10 +9,10 @@ class HomePageWidget extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         // barra no topo da tela
-        title: const Text('data'),
+        title: const Text('Home'),
       ),
       body: const Center(
-        child: Text('Bruno Mota'),
+        child: Text('Bruno Mota 0'),
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
