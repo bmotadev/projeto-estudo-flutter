@@ -15,7 +15,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final names = ['João', 'Bruno', 'Jéssica'];
+    final names = ['João', 'Bruno', 'Jéssica', 'Rosângela', 'Ireni', 'Maria'];
 
     return Scaffold(
       appBar: AppBar(
@@ -25,13 +25,12 @@ class _HomePageState extends State<HomePage> {
         width: double.infinity,
         height: double.infinity,
         child: ListView.builder(
+          //usar com arrays
           itemCount: names.length,
           itemBuilder: (context, index) {
-            return Container(
-              width: double.infinity,
-              height: 80,
-              margin: const EdgeInsets.all(8),
-              color: Colors.red,
+            final name = names[index];
+            return ListTile(
+              title: Text(name),
             );
           },
         ),
