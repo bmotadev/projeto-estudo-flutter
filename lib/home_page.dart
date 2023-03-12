@@ -15,26 +15,27 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final names = ['João', 'Bruno', 'Jéssica'];
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Curso Flutter'),
       ),
       body: SizedBox(
-          width: double.infinity,
-          height: double.infinity,
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                for (var i = 0; i < 10; i++)
-                  Container(
-                    width: double.infinity,
-                    height: 80,
-                    margin: EdgeInsets.all(12),
-                    color: Colors.pink,
-                  )
-              ],
-            ),
-          )),
+        width: double.infinity,
+        height: double.infinity,
+        child: ListView.builder(
+          itemCount: names.length,
+          itemBuilder: (context, index) {
+            return Container(
+              width: double.infinity,
+              height: 80,
+              margin: const EdgeInsets.all(8),
+              color: Colors.red,
+            );
+          },
+        ),
+      ),
     );
   }
 
