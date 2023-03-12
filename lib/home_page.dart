@@ -15,48 +15,11 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final names = ['João', 'Bruno', 'Jéssica', 'Rosângela', 'Ireni', 'Maria'];
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('Curso Flutter'),
       ),
-      body: SizedBox(
-        width: double.infinity,
-        height: double.infinity,
-        child: ListView.builder(
-          //usar com arrays
-          itemCount: names.length,
-          itemBuilder: (context, index) {
-            final name = names[index];
-            return ListTile(
-              title: Text(name),
-            );
-          },
-        ),
-      ),
+      body: Column(),
     );
   }
-
-  // @override
-  // Widget build(BuildContext context) {
-  //   return Scaffold(
-  //     appBar: AppBar(
-  //       // barra no topo da tela
-  //       title: const Text('Home'),
-  //     ),
-  //     body: Center(
-  //       child: Text("Bruno Mota $counter"),
-  //     ),
-  //     floatingActionButton: FloatingActionButton(
-  //       child: Icon(Icons.add),
-  //       // quando clicar nesse botão, vai chamar a função anonima abaixo. Uma função anonima pode ser passada como propriedade.
-  //       onPressed: () {
-  //         setState(() {
-  //           counter++;
-  //         });
-  //       },
-  //     ),
-  //   );
-  // }
 }
