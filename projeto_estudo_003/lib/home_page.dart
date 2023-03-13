@@ -26,8 +26,8 @@ class _HomePageState extends State<HomePage> {
             SizedBox(
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
-              child: Image.network(
-                'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Peugeot_Logo.svg/220px-Peugeot_Logo.svg.png',
+              child: Image.asset(
+                'assets/images/peugeot.png',
                 fit: BoxFit.cover,
               ),
             ),
