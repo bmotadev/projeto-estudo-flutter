@@ -11,52 +11,53 @@ class HomePage extends StatefulWidget {
 // é separado em duas classes para respeitar o principio do SOLID
 //classe que vai se autogerenciar o estado
 class _HomePageState extends State<HomePage> {
-  var counter = 0;
+  final list = <String>[];
+  final controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    final names = ['João', 'Bruno', 'Jéssica', 'Rosângela', 'Ireni', 'Maria'];
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('Curso Flutter'),
       ),
-      body: SizedBox(
-        width: double.infinity,
-        height: double.infinity,
-        child: ListView.builder(
-          //usar com arrays
-          itemCount: names.length,
-          itemBuilder: (context, index) {
-            final name = names[index];
-            return ListTile(
-              title: Text(name),
-            );
-          },
-        ),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              children: [
+                Expanded(
+                  child: TextField(
+                    controller: controller,
+                  ),
+                ),
+                IconButton(
+                  onPressed: () {
+                    final text = controller.text;
+                    setState(() {
+                      list.add(text);
+                    });
+                    controller.clear();
+                  },
+                  icon: Icon(Icons.add),
+                )
+              ],
+            ),
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: list.length,
+              itemBuilder: (BuildContext context, int index) {
+                final item = list[index];
+
+                return ListTile(
+                  title: Text(item),
+                );
+              },
+            ),
+          )
+        ],
       ),
     );
   }
-
-  // @override
-  // Widget build(BuildContext context) {
-  //   return Scaffold(
-  //     appBar: AppBar(
-  //       // barra no topo da tela
-  //       title: const Text('Home'),
-  //     ),
-  //     body: Center(
-  //       child: Text("Bruno Mota $counter"),
-  //     ),
-  //     floatingActionButton: FloatingActionButton(
-  //       child: Icon(Icons.add),
-  //       // quando clicar nesse botão, vai chamar a função anonima abaixo. Uma função anonima pode ser passada como propriedade.
-  //       onPressed: () {
-  //         setState(() {
-  //           counter++;
-  //         });
-  //       },
-  //     ),
-  //   );
-  // }
 }
