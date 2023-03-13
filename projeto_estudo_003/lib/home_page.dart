@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -36,11 +38,24 @@ class _HomePageState extends State<HomePage> {
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
             ),
-            Container(
-              color: Colors.blue,
-              height: 90,
-              width: 90,
-            )
+            SizedBox(
+              height: MediaQuery.of(context).size.height,
+              width: MediaQuery.of(context).size.width,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const FlutterLogo(
+                    size: 150,
+                    textColor: Colors.white,
+                    style: FlutterLogoStyle.horizontal,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: const Text('Entrar no app'),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
