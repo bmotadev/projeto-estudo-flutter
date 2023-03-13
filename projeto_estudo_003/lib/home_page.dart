@@ -23,10 +23,13 @@ class _HomePageState extends State<HomePage> {
         child: Stack(
           alignment: Alignment.center,
           children: [
-            Container(
-              color: Colors.red,
-              height: 100,
-              width: 100,
+            SizedBox(
+              height: MediaQuery.of(context).size.height,
+              width: MediaQuery.of(context).size.width,
+              child: Image.network(
+                'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Peugeot_Logo.svg/220px-Peugeot_Logo.svg.png',
+                fit: BoxFit.cover,
+              ),
             ),
             Container(
               color: Colors.blue,
